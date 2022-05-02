@@ -1,0 +1,79 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    background: linear-gradient(rgb(178, 194, 187), rgb(138, 171, 159))
+}
+
+.transition {
+    transition: transform 600ms ease-in-out;
+}
+
+.carousel-container {
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.4);
+    display: flex;
+    max-width: 700px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    margin-top: max(calc(49.5vh - 200px), 0px);
+}
+
+img {
+    width: 100%;
+}
+
+.carousel-slide {
+    display: flex;
+    width: 100%;
+}
+
+#prev_btn {
+    position: absolute;
+    top: 45%;
+    z-index: 10;
+    left: 5%;
+    font-size: 40px;
+    color: white;
+    opacity: 0.7;
+    cursor: pointer;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.8));
+}
+
+#next_btn {
+    position: absolute;
+    top: 45%;
+    z-index: 10;
+    right: 5%;
+    font-size: 40px;
+    color: white;
+    opacity: 0.7;
+    cursor: pointer;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.8));
+}
+
+.circle_btns {
+    display: flex;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translatex(-50%);
+    z-index: 10;
+    gap: 20px;
+    border-radius: 10px;
+    background: rgba(35, 39, 36, 0.7);
+    padding: 10px 15px;
+}
+
+.fa-solid, .fa-circle {
+    font-size: 10px;
+    color: white;
+    opacity: 0.7;
+    cursor: pointer;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.8));
+    transition: transform 600ms ease-in-out;
+}
