@@ -5,7 +5,7 @@
 }
 
 html {
-    background: linear-gradient(rgb(178, 194, 187), rgb(138, 171, 159))
+    background: linear-gradient(rgb(255, 255, 255), rgb(206, 206, 206))
 }
 
 .transition {
@@ -21,6 +21,7 @@ html {
     position: relative;
     border-radius: 10px;
     margin-top: max(calc(49.5vh - 200px), 0px);
+    transform: scale(120%);
 }
 
 img {
