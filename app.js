@@ -84,26 +84,35 @@ carouselSlide.addEventListener('transitionend', () => {
 
 const circleBtnsIds = []
 
-for (let i = 0; i <= carouselImages.length -3; i++) {
-    circleBtnsIds.push('circle_btn_' + i)
+for (let i = 0; i < carouselImages.length -2; i++) {
+    circleBtnsIds.push(['circle_btn_' + i, 'circle_box_' + i])
 }
 
 circleBtnsIds.forEach( id => {
-    const i = document.createElement('i')
-    i.className = "fa-solid fa-circle"
-    i.id = id
-    circle_btns.appendChild(i)
+    const iBox = document.createElement('div')
+    iBox.className = 'i-box'
+    iBox.id = id[1]
+    circle_btns.appendChild(iBox)
+
+    const circle = document.createElement('i')
+    circle.className = "circle"
+    circle.id = id[0]
+    iBox.appendChild(circle)
 })
 
-const circleBtns = document.querySelectorAll('.fa-solid.fa-circle')
+const iBoxes = document.querySelectorAll('.i-box')
+const circleBtns = document.querySelectorAll('.circle')
 
-circleBtns[0].style.transform = 'scale(135%)'
+circleBtns[0].style.transform = 'scale(140%)'
 
 
-for (let i = 0; i < circleBtns.length; i++) {
-    circleBtns[i].addEventListener('click', () => {
-        circleBtns[i].style.transform = 'scale(135%)'
-        circleBtns[counter - 1].style.transform = 'scale(100%)'
-        counter = i + 1
-        move()})
+for (let i = 0; i < iBoxes.length; i++) {
+    iBoxes[i].addEventListener('click', () => {
+        if (counter - 1 !== i) {
+            circleBtns[i].style.transform = 'scale(140%)'
+            circleBtns[counter - 1].style.transform = 'scale(100%)'
+            counter = i + 1
+            move()}
+        }
+    )
 }
